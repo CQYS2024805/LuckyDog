@@ -1,0 +1,8 @@
+.vs
+imgs.blend
+imgs.blend1
+*.a
+*.lib
+*dll
+*.o
+*.obj
