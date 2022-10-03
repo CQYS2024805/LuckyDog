@@ -1,0 +1,18 @@
+{
+  "name": "humorous-bomb-call-ab3qb",
+  "productName": "humorous-bomb-call-ab3qb",
+  "description": "My Electron application description",
+  "keywords": [],
+  "main": "./main.js",
+  "version": "1.0.0",
+  "author": "Chris",
+  "scripts": {
+    "start": "electron .",
+    "package":"electron-packager . luckydog --platform=win32 --arch=x64 --icon=favicon.ico --out=./out --asar --app-version=1.0.0 --overwrite --ignore=node_modules"
+
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "20.2.0"
+  }
+}

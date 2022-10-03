@@ -69,7 +69,8 @@
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(IncludePath)</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);X:\LuckyDog\deps\include\;$(IncludePath)</IncludePath>
+    <LibraryPath>X:\LuckyDog\deps\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -100,14 +101,26 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glfw3dll.lib;freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\luckydog.cpp" />
+    <ClCompile Include="deps\src\glad.c" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\ui.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\luckydog.h" />
-    <ClInclude Include="include\ui.h" />
+    <ClInclude Include="include\graphics\shader.hpp" />
+    <ClInclude Include="include\graphics\text.hpp" />
+    <ClInclude Include="include\graphics\texture.hpp" />
+    <ClInclude Include="include\luckydog.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shader\bg.fs.glsl" />
+    <None Include="shader\bg.vs.glsl" />
+    <None Include="shader\text.fs.glsl" />
+    <None Include="shader\text.vs.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
